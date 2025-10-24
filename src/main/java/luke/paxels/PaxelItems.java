@@ -1,0 +1,51 @@
+package luke.paxels;
+
+import net.minecraft.core.item.Item;
+import net.minecraft.core.item.material.ToolMaterial;
+import turniplabs.halplibe.helper.ItemBuilder;
+
+import static luke.paxels.PaxelMod.MOD_ID;
+
+public final class PaxelItems {
+	public static Item TOOL_PAXEL_WOOD;
+	public static Item TOOL_PAXEL_STONE;
+	public static Item TOOL_PAXEL_IRON;
+	public static Item TOOL_PAXEL_GOLD;
+	public static Item TOOL_PAXEL_DIAMOND;
+	public static Item TOOL_PAXEL_STEEL;
+
+
+	private static boolean hasInit = false;
+
+	public static void init() {
+		if (!hasInit) {
+			hasInit = true;
+			initializeItems();
+		}
+	}
+
+	public static String itemKey(String string) {
+		return MOD_ID + ":item/" + string;
+	}
+
+	public static void initializeItems() {
+		TOOL_PAXEL_WOOD = new ItemBuilder(MOD_ID)
+			.build(new ItemToolPaxel("tool.paxel.wood", "minecraft:item/tool_paxel_wood", 20000, ToolMaterial.wood));
+
+		TOOL_PAXEL_STONE = new ItemBuilder(MOD_ID)
+			.build(new ItemToolPaxel("tool.paxel.stone", "minecraft:item/tool_paxel_stone", 20001, ToolMaterial.stone));
+
+		TOOL_PAXEL_IRON = new ItemBuilder(MOD_ID)
+			.build(new ItemToolPaxel("tool.paxel.iron", "minecraft:item/tool_paxel_iron", 20002, ToolMaterial.iron));
+
+		TOOL_PAXEL_GOLD = new ItemBuilder(MOD_ID)
+			.build(new ItemToolPaxel("tool.paxel.gold", "minecraft:item/tool_paxel_gold", 20003, ToolMaterial.gold));
+
+		TOOL_PAXEL_DIAMOND = new ItemBuilder(MOD_ID)
+			.build(new ItemToolPaxel("tool.paxel.diamond", "minecraft:item/tool_paxel_diamond", 20004, ToolMaterial.diamond));
+
+		TOOL_PAXEL_STEEL = new ItemBuilder(MOD_ID)
+			.build(new ItemToolPaxel("tool.paxel.steel", "minecraft:item/tool_paxel_steel", 20005, ToolMaterial.steel));
+	}
+
+}

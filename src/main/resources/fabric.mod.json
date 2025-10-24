@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "id": "examplemod",
+  "id": "paxels",
   "version": "${version}",
 
-  "name": "Example Mod",
-  "description": "This mod aims to help new BTA modders.",
+  "name": "Paxels",
+  "description": "Bringing paxles to BTA with a standalone mod.",
   "authors": [
-    "Turnip Labs"
+    "Luke"
   ],
   "contact": {
     "homepage": "",
@@ -19,20 +19,24 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-			"turniplabs.examplemod.ExampleMod"
+			"luke.paxels.PaxelMod"
     ],
 		"beforeGameStart": [
-			"turniplabs.examplemod.ExampleMod"
+			"luke.paxels.PaxelMod"
 		],
 		"afterGameStart": [
-			"turniplabs.examplemod.ExampleMod"
+			"luke.paxels.PaxelMod"
 		],
 		"recipesReady": [
-			"turniplabs.examplemod.ExampleMod"
+			"luke.paxels.PaxelRecipes"
+		],
+		"initModels": [
+			"luke.paxels.PaxelModels"
 		]
 	},
+
   "mixins": [
-      "examplemod.mixins.json"
+      "paxels.mixins.json"
   ],
 
   "depends": {
