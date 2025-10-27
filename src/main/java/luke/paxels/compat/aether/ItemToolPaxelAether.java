@@ -14,6 +14,7 @@ public class ItemToolPaxelAether extends ItemTool {
 
 	public ItemToolPaxelAether(String name, String namespaceId, int id, ToolMaterial toolMaterial) {
 		super(name, namespaceId, id, 3, toolMaterial, null);
+		this.setMaxDamage(toolMaterial.getDurability() * 2);
 	}
 
 	public float getStrVsBlock(ItemStack itemstack, Block<?> block) {

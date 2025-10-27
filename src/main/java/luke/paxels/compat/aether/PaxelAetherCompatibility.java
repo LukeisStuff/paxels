@@ -7,14 +7,13 @@ import net.minecraft.client.render.TileEntityRenderDispatcher;
 import net.minecraft.client.render.block.color.BlockColorDispatcher;
 import net.minecraft.client.render.block.model.BlockModelDispatcher;
 import net.minecraft.client.render.item.model.ItemModelDispatcher;
-import net.minecraft.core.crafting.LookupFuelFurnace;
 import turniplabs.halplibe.util.GameStartEntrypoint;
 import turniplabs.halplibe.util.ModelEntrypoint;
 import turniplabs.halplibe.util.RecipeEntrypoint;
 
 public class PaxelAetherCompatibility implements PreLaunchEntrypoint, GameStartEntrypoint, ModelEntrypoint, RecipeEntrypoint {
 
-	public static boolean IS_AETHER_LOADED = true;
+	public static boolean IS_AETHER_LOADED = false;
 
 	public static ModelEntrypoint modelEntryPointDelegate;
 	public static RecipeEntrypoint recipeEntrypointDelegate;
@@ -63,7 +62,6 @@ public class PaxelAetherCompatibility implements PreLaunchEntrypoint, GameStartE
 
 	@Override
 	public void afterGameStart() {
-		LookupFuelFurnace.instance.addFuelEntry(PaxelAetherItems.TOOL_PAXEL_SKYROOT.id, 500);
 	}
 
 	@Override

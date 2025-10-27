@@ -19,16 +19,19 @@
 			"luke.paxels.PaxelMod"
 		],
 		"beforeGameStart": [
-			"luke.paxels.PaxelMod"
+			"luke.paxels.PaxelMod",
+			"luke.paxels.compat.aether.PaxelAetherCompatibility"
 		],
 		"afterGameStart": [
 			"luke.paxels.PaxelMod"
 		],
 		"recipesReady": [
-			"luke.paxels.PaxelRecipes"
+			"luke.paxels.PaxelRecipes",
+			"luke.paxels.compat.aether.PaxelAetherCompatibility"
 		],
 		"initModels": [
-			"luke.paxels.PaxelModels"
+			"luke.paxels.PaxelModels",
+			"luke.paxels.compat.aether.PaxelAetherCompatibility"
 		],
 		"preLaunch": [
 			"luke.paxels.compat.aether.PaxelAetherCompatibility"

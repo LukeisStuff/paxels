@@ -1,8 +1,8 @@
 package luke.paxels.compat.aether;
 
 import net.minecraft.core.block.Block;
+import net.minecraft.core.block.tag.BlockTags;
 import net.minecraft.core.item.ItemStack;
-import net.minecraft.core.item.Items;
 import net.minecraft.core.item.material.ToolMaterial;
 import net.minecraft.core.util.helper.DamageType;
 import teamport.aether.AetherMod;
@@ -15,15 +15,10 @@ public class ItemToolPaxelValkyrie extends ItemToolPaxelAether implements Aether
 		super(name, namespaceId, id, toolMaterial);
 	}
 
-	@Override
 	public float getStrVsBlock(ItemStack itemstack, Block<?> block) {
-		if (!block.hasTag(AetherBlockTags.MINEABLE_BY_AETHER_AXE))
-			return Items.TOOL_AXE_DIAMOND.getStrVsBlock(itemstack, block);
-		if (!block.hasTag(AetherBlockTags.MINEABLE_BY_AETHER_PICKAXE))
-			return Items.TOOL_AXE_DIAMOND.getStrVsBlock(itemstack, block);
-		if (!block.hasTag(AetherBlockTags.MINEABLE_BY_AETHER_SHOVEL))
-			return Items.TOOL_AXE_DIAMOND.getStrVsBlock(itemstack, block);
-		return this.material.getEfficiency(false);
+		return block.hasTag(AetherBlockTags.MINEABLE_BY_AETHER_PICKAXE) || block.hasTag(AetherBlockTags.MINEABLE_BY_AETHER_AXE) || block.hasTag(AetherBlockTags.MINEABLE_BY_AETHER_SHOVEL)
+			|| block.hasTag(BlockTags.MINEABLE_BY_AXE) || block.hasTag(BlockTags.MINEABLE_BY_SHOVEL) || block.hasTag(BlockTags.MINEABLE_BY_PICKAXE) || block.hasTag(BlockTags.MINEABLE_BY_HOE)
+			? this.material.getEfficiency(false) : 1.0F;
 	}
 
 	@Override
