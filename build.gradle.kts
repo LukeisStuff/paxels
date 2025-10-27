@@ -36,6 +36,9 @@ val uselessnumerical_version: String by project
 val bwa_version: String by project
 val bwa_mod_impl: String by project
 
+val deep_version: String by project
+val deep_mod_impl: String by project
+
 
 
 group = mod_group
@@ -123,10 +126,15 @@ dependencies {
 //	modImplementation("sunsetsatellite:catalyst-effects:${catalysteffects_version}")
 	modImplementation("gungun974:UselessNumerical:${uselessnumerical_version}")
 
-	val bwa_import = "com.github.bta-team-port:better-with-aether:${bwa_version}"
+	val bwaImport = "com.github.bta-team-port:better-with-aether:${bwa_version}"
 
-	if (bwa_mod_impl == "true") modImplementation(bwa_import)
-	else compileOnly(bwa_import)
+	if (bwa_mod_impl == "true") modImplementation(bwaImport)
+	else compileOnly(bwaImport)
+
+	val deepImport = "com.github.bta-team-port:better-with-aether:${deep_version}"
+
+	if (deep_mod_impl == "true") modImplementation(deepImport)
+	else compileOnly(deepImport)
 
 	implementation("org.slf4j:slf4j-api:1.8.0-beta4")
 	implementation("org.apache.logging.log4j:log4j-slf4j18-impl:2.16.0")
