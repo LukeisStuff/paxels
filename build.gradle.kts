@@ -28,6 +28,16 @@ val loader_version: String by project
 val halplibe_version: String by project
 val mod_menu_version: String by project
 
+val catalystcore_version: String by project
+val catalysteffects_version: String by project
+
+val uselessnumerical_version: String by project
+
+val bwa_version: String by project
+val bwa_mod_impl: String by project
+
+
+
 group = mod_group
 base.archivesName.set(mod_name)
 version = mod_version
@@ -84,6 +94,13 @@ repositories {
 		}
 		metadataSources { artifact() }
 	}
+	ivy {
+		url = uri("https://github.com/")
+		patternLayout {
+			artifact("[organization]/[module]/releases/download/[revision]-${bta_version}/[module]-[revision].jar")
+		}
+		metadataSources { artifact() }
+	}
 }
 
 dependencies {
@@ -98,6 +115,18 @@ dependencies {
 	modImplementation("turniplabs:halplibe:$halplibe_version")
 
 	modImplementation("turniplabs:modmenu-bta:$mod_menu_version")
+
+	modImplementation ("com.github.MartinSVK12:catalyst:7.3-SNAPSHOT")
+	modImplementation ("com.github.Olypolyu:catalyst:heart_containers-SNAPSHOT")
+
+//	modImplementation("sunsetsatellite:catalyst-core:${catalystcore_version}")
+//	modImplementation("sunsetsatellite:catalyst-effects:${catalysteffects_version}")
+	modImplementation("gungun974:UselessNumerical:${uselessnumerical_version}")
+
+	val bwa_import = "com.github.bta-team-port:better-with-aether:${bwa_version}"
+
+	if (bwa_mod_impl == "true") modImplementation(bwa_import)
+	else compileOnly(bwa_import)
 
 	implementation("org.slf4j:slf4j-api:1.8.0-beta4")
 	implementation("org.apache.logging.log4j:log4j-slf4j18-impl:2.16.0")

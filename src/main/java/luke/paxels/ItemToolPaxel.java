@@ -11,7 +11,7 @@ import static net.minecraft.core.item.tool.ItemToolPickaxe.miningLevels;
 
 public class ItemToolPaxel extends ItemTool {
 
-	protected ItemToolPaxel(String name, String namespaceId, int id, ToolMaterial toolMaterial) {
+	public ItemToolPaxel(String name, String namespaceId, int id, ToolMaterial toolMaterial) {
 		super(name, namespaceId, id, 3, toolMaterial, null);
 	}
 

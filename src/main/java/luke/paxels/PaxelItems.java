@@ -30,22 +30,22 @@ public final class PaxelItems {
 
 	public static void initializeItems() {
 		TOOL_PAXEL_WOOD = new ItemBuilder(MOD_ID)
-			.build(new ItemToolPaxel("tool.paxel.wood", "minecraft:item/tool_paxel_wood", 20000, ToolMaterial.wood));
+			.build(new ItemToolPaxel("tool.paxel.wood", itemKey("tool_paxel_wood"), 20000, ToolMaterial.wood));
 
 		TOOL_PAXEL_STONE = new ItemBuilder(MOD_ID)
-			.build(new ItemToolPaxel("tool.paxel.stone", "minecraft:item/tool_paxel_stone", 20001, ToolMaterial.stone));
+			.build(new ItemToolPaxel("tool.paxel.stone", itemKey("tool_paxel_stone"), 20001, ToolMaterial.stone));
 
 		TOOL_PAXEL_IRON = new ItemBuilder(MOD_ID)
-			.build(new ItemToolPaxel("tool.paxel.iron", "minecraft:item/tool_paxel_iron", 20002, ToolMaterial.iron));
+			.build(new ItemToolPaxel("tool.paxel.iron", itemKey("tool_paxel_iron"), 20002, ToolMaterial.iron));
 
 		TOOL_PAXEL_GOLD = new ItemBuilder(MOD_ID)
-			.build(new ItemToolPaxel("tool.paxel.gold", "minecraft:item/tool_paxel_gold", 20003, ToolMaterial.gold));
+			.build(new ItemToolPaxel("tool.paxel.gold", itemKey("tool_paxel_gold"), 20003, ToolMaterial.gold));
 
 		TOOL_PAXEL_DIAMOND = new ItemBuilder(MOD_ID)
-			.build(new ItemToolPaxel("tool.paxel.diamond", "minecraft:item/tool_paxel_diamond", 20004, ToolMaterial.diamond));
+			.build(new ItemToolPaxel("tool.paxel.diamond", itemKey("tool_paxel_diamond"), 20004, ToolMaterial.diamond));
 
 		TOOL_PAXEL_STEEL = new ItemBuilder(MOD_ID)
-			.build(new ItemToolPaxel("tool.paxel.steel", "minecraft:item/tool_paxel_steel", 20005, ToolMaterial.steel));
+			.build(new ItemToolPaxel("tool.paxel.steel", itemKey("tool_paxel_steel"), 20005, ToolMaterial.steel));
 	}
 
 }
