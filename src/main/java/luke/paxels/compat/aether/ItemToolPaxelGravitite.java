@@ -32,14 +32,14 @@ public class ItemToolPaxelGravitite extends ItemToolPaxelAether implements Aethe
 		Block<?> block = world.getBlock(blockX, blockY, blockZ);
 		Block<?> nextBlock = world.getBlock(blockX, blockY + 1, blockZ);
 		if (block == null
-			|| !block.hasTag(AetherBlockTags.MINEABLE_BY_AETHER_PICKAXE)
-			|| !block.hasTag(AetherBlockTags.MINEABLE_BY_AETHER_AXE)
-			|| !block.hasTag(AetherBlockTags.MINEABLE_BY_AETHER_SHOVEL)
 			|| !player.isSneaking()
 			|| block.getHardness() < 0
-			|| nextBlock != null
+			|| (nextBlock != null
 			&& nextBlock.id() != Blocks.COBWEB.id()
-			&& !nextBlock.hasTag(BlockTags.PLACE_OVERWRITES)) {
+			&& !nextBlock.hasTag(BlockTags.PLACE_OVERWRITES))
+			|| (!block.hasTag(AetherBlockTags.MINEABLE_BY_AETHER_PICKAXE)
+			&& !block.hasTag(AetherBlockTags.MINEABLE_BY_AETHER_AXE)
+			&& !block.hasTag(AetherBlockTags.MINEABLE_BY_AETHER_SHOVEL))) {
 			return false;
 		}
 

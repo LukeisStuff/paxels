@@ -17,9 +17,13 @@ public class ItemToolPaxelZanite extends ItemToolPaxelAether {
 	@Override
 	public float getStrVsBlock(ItemStack itemstack, Block<?> block) {
 		if (itemstack == null) return 0f;
-
-		if (!block.hasTag(AetherBlockTags.MINEABLE_BY_AETHER_PICKAXE) || !block.hasTag(AetherBlockTags.MINEABLE_BY_AETHER_SHOVEL) || !block.hasTag(AetherBlockTags.MINEABLE_BY_AETHER_AXE)) return 1.0F;
+		if (!block.hasTag(AetherBlockTags.MINEABLE_BY_AETHER_PICKAXE) &&
+			!block.hasTag(AetherBlockTags.MINEABLE_BY_AETHER_SHOVEL) &&
+			!block.hasTag(AetherBlockTags.MINEABLE_BY_AETHER_AXE)) {
+			return 1.0F;
+		}
 		float durability_progress = ((float) itemstack.getMetadata() / this.getMaxDamage());
+
 		float base_efficiency = this.material.getEfficiency(false);
 		return MathHelper.lerp(base_efficiency, base_efficiency * ZANITE_MULTIPLIER, durability_progress);
 	}
