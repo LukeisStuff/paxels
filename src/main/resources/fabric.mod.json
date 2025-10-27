@@ -3,7 +3,7 @@
 	"id": "paxels",
 	"version": "${version}",
 	"name": "Paxels",
-	"description": "Bringing paxles to BTA with a standalone mod.",
+	"description": "Bringing paxels to BTA with a standalone mod.",
 	"authors": [
 		"Luke"
 	],
@@ -20,21 +20,25 @@
 		],
 		"beforeGameStart": [
 			"luke.paxels.PaxelMod",
-			"luke.paxels.compat.aether.PaxelAetherCompatibility"
+			"luke.paxels.compat.aether.PaxelAetherCompatibility",
+			"luke.paxels.compat.deep.PaxelDeepCompatibility"
 		],
 		"afterGameStart": [
 			"luke.paxels.PaxelMod"
 		],
 		"recipesReady": [
 			"luke.paxels.PaxelRecipes",
-			"luke.paxels.compat.aether.PaxelAetherCompatibility"
+			"luke.paxels.compat.aether.PaxelAetherCompatibility",
+			"luke.paxels.compat.deep.PaxelDeepCompatibility"
 		],
 		"initModels": [
 			"luke.paxels.PaxelModels",
-			"luke.paxels.compat.aether.PaxelAetherCompatibility"
+			"luke.paxels.compat.aether.PaxelAetherCompatibility",
+			"luke.paxels.compat.deep.PaxelDeepCompatibility"
 		],
 		"preLaunch": [
-			"luke.paxels.compat.aether.PaxelAetherCompatibility"
+			"luke.paxels.compat.aether.PaxelAetherCompatibility",
+			"luke.paxels.compat.deep.PaxelDeepCompatibility"
 		]
 	},
 	"mixins": [
