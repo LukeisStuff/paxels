@@ -2,6 +2,7 @@ package luke.paxels;
 
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.material.ToolMaterial;
+import net.minecraft.core.item.tag.ItemTags;
 import turniplabs.halplibe.helper.ItemBuilder;
 
 import static luke.paxels.PaxelMod.MOD_ID;
@@ -39,6 +40,7 @@ public final class PaxelItems {
 			.build(new ItemToolPaxel("tool.paxel.iron", itemKey("tool_paxel_iron"), 20002, ToolMaterial.iron));
 
 		TOOL_PAXEL_GOLD = new ItemBuilder(MOD_ID)
+			.setTags(ItemTags.IS_SILK_TOUCH)
 			.build(new ItemToolPaxel("tool.paxel.gold", itemKey("tool_paxel_gold"), 20003, ToolMaterial.gold));
 
 		TOOL_PAXEL_DIAMOND = new ItemBuilder(MOD_ID)
