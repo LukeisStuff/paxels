@@ -1,5 +1,6 @@
 package luke.paxels;
 
+import luke.paxels.compat.commandly.PaxelCommandlyRules;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockLogicLog;
 import net.minecraft.core.block.Blocks;
@@ -21,7 +22,6 @@ import net.minecraft.core.world.World;
 import org.jetbrains.annotations.Nullable;
 import redart15.commandly.veincapitator.VeinMining;
 import teamport.aether.block.AetherBlocks;
-import teamport.aether.compat.commandly.AetherCommandlyRules;
 import teamport.aether.entity.player.PlayerUntil;
 
 import java.util.Random;
@@ -36,10 +36,12 @@ public class ItemToolPaxel extends ItemToolPickaxe {
         this.setMaxDamage(toolMaterial.getDurability() * 2);
     }
 
+    @Override
     public float getStrVsBlock(ItemStack itemstack, Block<?> block) {
         return block.hasTag(BlockTags.MINEABLE_BY_PICKAXE) || block.hasTag(BlockTags.MINEABLE_BY_AXE) || block.hasTag(BlockTags.MINEABLE_BY_SHOVEL) || block.hasTag(BlockTags.MINEABLE_BY_HOE) ? this.material.getEfficiency(false) : 1.0F;
     }
 
+    @Override
     public boolean canHarvestBlock(Mob mob, ItemStack itemStack, Block<?> block) {
         Integer miningLevel = miningLevels.get(block);
         if (miningLevel != null) {
@@ -49,6 +51,7 @@ public class ItemToolPaxel extends ItemToolPickaxe {
         }
     }
 
+    @Override
     public boolean beforeDestroyBlock(World world, ItemStack itemStack, int blockId, int x, int y, int z, Side side, Player player) {
         if (!world.isClientSide && world.getGameRuleValue(GameRules.TREECAPITATOR) && !player.isSneaking()) {
             int id = world.getBlockId(x, y, z);
@@ -56,7 +59,7 @@ public class ItemToolPaxel extends ItemToolPickaxe {
                 return !(new TreecapitatorHelper(world, x, y, z, player)).chopTree();
             }
         }
-        if (!world.isClientSide && AetherCommandlyRules.canVeinMine(world) && !player.isSneaking()) {
+        if (!world.isClientSide && PaxelCommandlyRules.canVeinMine(world) && !player.isSneaking()) {
             return !VeinMining
                 .veinMining(world, itemStack, x, y, z, player)
                 .setDropCause(PlayerUntil.isSilkTouch(player) ? EnumDropCause.SILK_TOUCH : EnumDropCause.PROPER_TOOL)
@@ -67,6 +70,7 @@ public class ItemToolPaxel extends ItemToolPickaxe {
         return true;
     }
 
+    @Override
     public boolean onUseItemOnBlock(ItemStack itemstack, Player player, World world, int blockX, int blockY, int blockZ, Side side, double xPlaced, double yPlaced) {
         return this.shovelBlock(itemstack, player, world, blockX, blockY, blockZ, side);
     }
@@ -97,6 +101,7 @@ public class ItemToolPaxel extends ItemToolPickaxe {
         return false;
     }
 
+    @Override
     public void onUseByActivator(ItemStack itemStack, TileEntityActivator activatorBlock, World world, Random random, int blockX, int blockY, int blockZ, double offX, double offY, double offZ, Direction direction) {
         this.shovelBlock(itemStack, null, world, blockX + direction.getOffsetX(), blockY + direction.getOffsetY(), blockZ + direction.getOffsetZ(), direction.getSide());
     }

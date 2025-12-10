@@ -39,6 +39,8 @@ dragonfly = "1.7.0-alpha.7"
 commandly = "1.1.3+7.3_04"
 # Check this on https://github.com/bta-team-port/better-with-aether/releases
 aether = "0.14.0+7.3_04"
+# Check this on https://modrinth.com/mod/deepbta
+deep = "1.5.1"
 ##########################################################################
 # Dependencies
 # Check this on https://central.sonatype.com/artifact/org.slf4j/slf4j-api/
@@ -67,6 +69,7 @@ uselessNumerical = { group = "gungun974", name = "uselessnumerical", version.ref
 btwaila = { group = "useless", name = "btwaila", version.ref = "btwaila" }
 commandly = { group = "redart15", name = "Commandly", version.ref = "commandly" }
 aether = { group = "maven.modrinth", name = "better-with-aether-bta", version.ref = "aether" }
+deep = { group = "maven.modrinth", name = "deepbta", version.ref = "deep" }
 slf4jApi = { group = "org.slf4j", name = "slf4j-api", version.ref = "slf4jApi" }
 guava = { group = "com.google.guava", name = "guava", version.ref = "guava" }
 log4j-slf4j2-impl = { group = "org.apache.logging.log4j", name = "log4j-slf4j2-impl", version.ref = "log4j" }
