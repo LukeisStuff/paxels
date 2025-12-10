@@ -7,13 +7,13 @@ import net.minecraft.core.block.Blocks;
 import net.minecraft.core.block.entity.TileEntityActivator;
 import net.minecraft.core.data.gamerule.GameRules;
 import net.minecraft.core.data.gamerule.TreecapitatorHelper;
+import net.minecraft.core.data.tag.Tag;
 import net.minecraft.core.entity.Mob;
 import net.minecraft.core.entity.player.Player;
 import net.minecraft.core.enums.EnumBlockSoundEffectType;
 import net.minecraft.core.enums.EnumDropCause;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.item.material.ToolMaterial;
-import net.minecraft.core.item.tool.ItemTool;
 import net.minecraft.core.util.helper.Direction;
 import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
@@ -23,14 +23,15 @@ import teamport.aether.block.AetherBlockTags;
 import teamport.aether.block.AetherBlocks;
 import teamport.aether.compat.commandly.AetherCommandlyRules;
 import teamport.aether.entity.player.PlayerUntil;
+import teamport.aether.item.item_tool.ItemToolPickaxeAether;
 
 import java.util.Random;
 
 
-public class ItemToolPaxelAether extends ItemTool {
+public class ItemToolPaxelAether extends ItemToolPickaxeAether {
 
-    public ItemToolPaxelAether(String name, String namespaceId, int id, ToolMaterial toolMaterial) {
-        super(name, namespaceId, id, 3, toolMaterial, null);
+    public ItemToolPaxelAether(String name, String namespaceId, int id, int damageDealt, ToolMaterial toolMaterial, Tag<Block<?>> tagEffectiveAgainst) {
+        super(name, namespaceId, id, toolMaterial);
         this.setMaxDamage(toolMaterial.getDurability() * 2);
     }
 

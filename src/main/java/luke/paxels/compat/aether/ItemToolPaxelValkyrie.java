@@ -25,7 +25,7 @@ import teamport.aether.item.AetherHasCustomDamageType;
 public class ItemToolPaxelValkyrie extends ItemToolPaxelAether implements AetherHasCustomDamageType {
 
 	public ItemToolPaxelValkyrie(String name, String namespaceId, int id, ToolMaterial toolMaterial) {
-		super(name, namespaceId, id, toolMaterial);
+		super(name, namespaceId, id, 3, toolMaterial, null);
 	}
 
     @Override

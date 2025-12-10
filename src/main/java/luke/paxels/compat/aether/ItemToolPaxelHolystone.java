@@ -14,7 +14,7 @@ import static teamport.aether.item.AetherItems.AMBROSIUM;
 public class ItemToolPaxelHolystone extends ItemToolPaxelAether {
 
 	public ItemToolPaxelHolystone(String name, String namespaceId, int id, ToolMaterial toolMaterial) {
-		super(name, namespaceId, id, toolMaterial);
+		super(name, namespaceId, id, 3, toolMaterial, null);
 	}
 
 	@Override

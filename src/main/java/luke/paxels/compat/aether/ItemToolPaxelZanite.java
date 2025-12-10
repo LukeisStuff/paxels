@@ -11,7 +11,7 @@ import static teamport.aether.AetherMod.ZANITE_MULTIPLIER;
 public class ItemToolPaxelZanite extends ItemToolPaxelAether {
 
 	public ItemToolPaxelZanite(String name, String namespaceId, int id, ToolMaterial enumtoolmaterial) {
-		super(name, namespaceId, id, enumtoolmaterial);
+		super(name, namespaceId, id, 3, enumtoolmaterial, null);
 	}
 
 	@Override

@@ -28,7 +28,7 @@ public final class PaxelAetherItems {
 
 	public static void initializeItems() {
 		TOOL_PAXEL_SKYROOT = new ItemBuilder(MOD_ID)
-			.build(new ItemToolPaxelAether("tool.paxel.skyroot", itemKey("tool_paxel_skyroot"), 20005, AetherToolMaterial.SKYROOT));
+			.build(new ItemToolPaxelAether("tool.paxel.skyroot", itemKey("tool_paxel_skyroot"), 20005, 3, AetherToolMaterial.SKYROOT, null));
 
 		TOOL_PAXEL_HOLYSTONE = new ItemBuilder(MOD_ID)
 			.build(new ItemToolPaxelHolystone("tool.paxel.holystone", itemKey("tool_paxel_holystone"), 20006, AetherToolMaterial.HOLYSTONE));

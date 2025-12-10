@@ -19,7 +19,7 @@ import turniplabs.halplibe.helper.EnvironmentHelper;
 public class ItemToolPaxelGravitite extends ItemToolPaxelAether implements AetherHasCustomDamageType {
 
 	public ItemToolPaxelGravitite(String name, String namespaceId, int id, ToolMaterial toolMaterial) {
-		super(name, namespaceId, id, toolMaterial);
+		super(name, namespaceId, id, 3, toolMaterial, null);
 	}
 
 	@Override
