@@ -3,7 +3,7 @@ package luke.paxels.compat.aether;
 import net.minecraft.core.crafting.LookupFuelFurnace;
 import net.minecraft.core.data.registry.Registries;
 import net.minecraft.core.item.ItemStack;
-import teamport.aether.items.AetherItems;
+import teamport.aether.item.AetherItems;
 import turniplabs.halplibe.helper.RecipeBuilder;
 import turniplabs.halplibe.helper.recipeBuilders.RecipeBuilderShaped;
 import turniplabs.halplibe.util.RecipeEntrypoint;

@@ -1,53 +1,53 @@
 {
-	"schemaVersion": 1,
-	"id": "paxels",
-	"version": "${version}",
-	"name": "Paxels",
-	"description": "Bringing paxels to BTA with a standalone mod.",
-	"authors": [
-		"LukeisStuff"
-	],
-	"contact": {
-		"homepage": "",
-		"sources": ""
-	},
-	"icon": "icon.png",
-	"license": "CC0-1.0",
-	"environment": "*",
-	"entrypoints": {
-		"main": [
-			"luke.paxels.PaxelMod"
-		],
-		"beforeGameStart": [
-			"luke.paxels.PaxelMod",
-			"luke.paxels.compat.aether.PaxelAetherCompatibility",
-			"luke.paxels.compat.deep.PaxelDeepCompatibility"
-		],
-		"afterGameStart": [
-			"luke.paxels.PaxelMod"
-		],
-		"recipesReady": [
-			"luke.paxels.PaxelRecipes",
-			"luke.paxels.compat.aether.PaxelAetherCompatibility",
-			"luke.paxels.compat.deep.PaxelDeepCompatibility"
-		],
-		"initModels": [
-			"luke.paxels.PaxelModels",
-			"luke.paxels.compat.aether.PaxelAetherCompatibility",
-			"luke.paxels.compat.deep.PaxelDeepCompatibility"
-		],
-		"preLaunch": [
-			"luke.paxels.compat.aether.PaxelAetherCompatibility",
-			"luke.paxels.compat.deep.PaxelDeepCompatibility"
-		]
-	},
-	"mixins": [
-		"paxels.mixins.json"
-	],
-	"depends": {
-		"minecraft": "*",
-		"fabricloader": ">=0.15.5"
-	},
-	"suggests": {
-	}
+  "schemaVersion": 1,
+  "id": "paxels",
+  "version": "${version}",
+  "name": "Paxels",
+  "description": "Bringing paxels to BTA with a standalone mod.",
+  "authors": [
+    "LukeisStuff"
+  ],
+  "icon": "icon.png",
+  "contact": {
+    "homepage": "",
+    "sources": ""
+  },
+  "license": "CC0-1.0",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "luke.paxels.PaxelMod"
+    ],
+    "beforeGameStart": [
+      "luke.paxels.PaxelMod",
+      "luke.paxels.compat.aether.PaxelAetherCompatibility"
+    ],
+    "afterGameStart": [
+      "luke.paxels.PaxelMod"
+    ],
+    "recipesReady": [
+      "luke.paxels.PaxelRecipes",
+      "luke.paxels.compat.aether.PaxelAetherCompatibility"
+    ],
+    "initModels": [
+      "luke.paxels.PaxelModels",
+      "luke.paxels.compat.aether.PaxelAetherCompatibility"
+    ],
+    "preLaunch": [
+      "luke.paxels.compat.aether.PaxelAetherCompatibility"
+    ],
+    "commandly": ["luke.paxels.compat.commandly.PaxelCommandlyPlugin"]
+  },
+  "mixins": [
+    "paxels.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${fabricloader}",
+    "halplibe": ">=${halplibe}",
+    "minecraft": "*",
+    "java": ">=${java}"
+  },
+  "suggests": {
+    "modmenu": ">=${modmenu}"
+  }
 }

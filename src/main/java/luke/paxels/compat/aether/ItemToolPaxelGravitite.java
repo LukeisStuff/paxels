@@ -11,9 +11,9 @@ import net.minecraft.core.util.helper.DamageType;
 import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
 import org.jetbrains.annotations.Nullable;
-import teamport.aether.blocks.AetherBlockTags;
-import teamport.aether.entity.floatingBlock.EntityFloatingBlock;
-import teamport.aether.items.AetherHasCustomDamageType;
+import teamport.aether.block.AetherBlockTags;
+import teamport.aether.entity.floating_block.EntityFloatingBlock;
+import teamport.aether.item.AetherHasCustomDamageType;
 import turniplabs.halplibe.helper.EnvironmentHelper;
 
 public class ItemToolPaxelGravitite extends ItemToolPaxelAether implements AetherHasCustomDamageType {
@@ -57,7 +57,7 @@ public class ItemToolPaxelGravitite extends ItemToolPaxelAether implements Aethe
 			world,
 			(double) blockX + 0.5F, (double) blockY + 0.5F, (double) blockZ + 0.5F,
 			block.id(), metadata, tileEntity);
-		entityFloatingBlock.hasRemovedBlock = true;
+		entityFloatingBlock.setHasRemovedBlock(true);
 		world.entityJoinedWorld(entityFloatingBlock);
 		itemstack.damageItem(1, player);
 		return true;

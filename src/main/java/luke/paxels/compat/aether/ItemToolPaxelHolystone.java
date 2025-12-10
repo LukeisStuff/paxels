@@ -9,7 +9,7 @@ import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
 import turniplabs.halplibe.helper.EnvironmentHelper;
 
-import static teamport.aether.items.AetherItems.AMBROSIUM;
+import static teamport.aether.item.AetherItems.AMBROSIUM;
 
 public class ItemToolPaxelHolystone extends ItemToolPaxelAether {
 

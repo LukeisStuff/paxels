@@ -4,7 +4,7 @@ import net.minecraft.core.block.Block;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.item.material.ToolMaterial;
 import net.minecraft.core.util.helper.MathHelper;
-import teamport.aether.blocks.AetherBlockTags;
+import teamport.aether.block.AetherBlockTags;
 
 import static teamport.aether.AetherMod.ZANITE_MULTIPLIER;
 

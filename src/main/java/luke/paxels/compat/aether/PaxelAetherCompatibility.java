@@ -7,6 +7,7 @@ import net.minecraft.client.render.TileEntityRenderDispatcher;
 import net.minecraft.client.render.block.color.BlockColorDispatcher;
 import net.minecraft.client.render.block.model.BlockModelDispatcher;
 import net.minecraft.client.render.item.model.ItemModelDispatcher;
+import org.spongepowered.asm.mixin.Mixins;
 import turniplabs.halplibe.util.GameStartEntrypoint;
 import turniplabs.halplibe.util.ModelEntrypoint;
 import turniplabs.halplibe.util.RecipeEntrypoint;
@@ -26,6 +27,7 @@ public class PaxelAetherCompatibility implements PreLaunchEntrypoint, GameStartE
 		IS_AETHER_LOADED = loader.isModLoaded("aether");
 
 		if (IS_AETHER_LOADED) {
+            Mixins.addConfiguration("compat/paxels/aether/aether.mixins.json");
 
 			try {
 				modelEntryPointDelegate = (ModelEntrypoint) Class
@@ -46,9 +48,7 @@ public class PaxelAetherCompatibility implements PreLaunchEntrypoint, GameStartE
 	private static void callInit(String classPath, String methodName) {
 		try {
 			Class.forName(classPath).getMethod(methodName).invoke(null);
-		}
-
-		catch (Exception e) {
+		} catch (Exception e) {
 			throw new RuntimeException(e);
 		}
 	}
