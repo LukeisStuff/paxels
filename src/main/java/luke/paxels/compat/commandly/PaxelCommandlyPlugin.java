@@ -3,15 +3,18 @@ package luke.paxels.compat.commandly;
 import luke.paxels.PaxelItems;
 import luke.paxels.compat.aether.PaxelAetherItems;
 import luke.paxels.compat.deep.PaxelDeepItems;
+import luke.paxels.compat.moonsteel.PaxelMoonItems;
 import net.minecraft.core.item.material.ToolMaterial;
 import redart15.commandly.api.CommandlyPlugin;
 import redart15.commandly.veincapitator.OreGroups;
 import redart15.commandly.veincapitator.PickAxeRegister;
 import silveon22.deep.block.DEEPBlocks;
 import teamport.aether.item.item_tool.AetherToolMaterial;
+import useless.moonsteel.MoonSteelItems;
 
 import static luke.paxels.compat.aether.PaxelAetherCompatibility.IS_AETHER_LOADED;
 import static luke.paxels.compat.deep.PaxelDeepCompatibility.IS_DEEP_LOADED;
+import static luke.paxels.compat.moonsteel.PaxelMoonCompatibility.IS_MOON_LOADED;
 
 public class PaxelCommandlyPlugin implements CommandlyPlugin {
 
@@ -132,6 +135,9 @@ public class PaxelCommandlyPlugin implements CommandlyPlugin {
             PickAxeRegister.register(PaxelDeepItems.TOOL_PAXEL_LEAD, PaxelDeepItems.lead);
             PickAxeRegister.register(PaxelDeepItems.TOOL_PAXEL_AMETHYST, PaxelDeepItems.amethyst);
             PickAxeRegister.register(PaxelDeepItems.TOOL_PAXEL_SILVER, PaxelDeepItems.silver);
+        }
+        if (IS_MOON_LOADED) {
+            PickAxeRegister.register(PaxelMoonItems.TOOL_PAXEL_MOONSTEEL, MoonSteelItems.moonSteelTool);
         }
     }
 }

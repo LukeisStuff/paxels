@@ -24,16 +24,16 @@ import teamport.aether.item.AetherHasCustomDamageType;
 
 public class ItemToolPaxelValkyrie extends ItemToolPaxelAether implements AetherHasCustomDamageType {
 
-	public ItemToolPaxelValkyrie(String name, String namespaceId, int id, ToolMaterial toolMaterial) {
-		super(name, namespaceId, id, 3, toolMaterial, null);
-	}
+    public ItemToolPaxelValkyrie(String name, String namespaceId, int id, ToolMaterial toolMaterial) {
+        super(name, namespaceId, id, 3, toolMaterial, null);
+    }
 
     @Override
-	public float getStrVsBlock(ItemStack itemstack, Block<?> block) {
-		return block.hasTag(AetherBlockTags.MINEABLE_BY_AETHER_PICKAXE) || block.hasTag(AetherBlockTags.MINEABLE_BY_AETHER_AXE) || block.hasTag(AetherBlockTags.MINEABLE_BY_AETHER_SHOVEL)
-			|| block.hasTag(BlockTags.MINEABLE_BY_AXE) || block.hasTag(BlockTags.MINEABLE_BY_SHOVEL) || block.hasTag(BlockTags.MINEABLE_BY_PICKAXE) || block.hasTag(BlockTags.MINEABLE_BY_HOE)
-			? this.material.getEfficiency(false) : 1.0F;
-	}
+    public float getStrVsBlock(ItemStack itemstack, Block<?> block) {
+        return block.hasTag(AetherBlockTags.MINEABLE_BY_AETHER_PICKAXE) || block.hasTag(AetherBlockTags.MINEABLE_BY_AETHER_AXE) || block.hasTag(AetherBlockTags.MINEABLE_BY_AETHER_SHOVEL)
+            || block.hasTag(BlockTags.MINEABLE_BY_AXE) || block.hasTag(BlockTags.MINEABLE_BY_SHOVEL) || block.hasTag(BlockTags.MINEABLE_BY_PICKAXE) || block.hasTag(BlockTags.MINEABLE_BY_HOE)
+            ? this.material.getEfficiency(false) : 1.0F;
+    }
 
     @Override
     public boolean canHarvestBlock(Mob mob, ItemStack itemStack, Block<?> block) {
@@ -70,8 +70,8 @@ public class ItemToolPaxelValkyrie extends ItemToolPaxelAether implements Aether
         return true;
     }
 
-	@Override
-	public DamageType getDamageType() {
-		return AetherMod.HOLY;
-	}
+    @Override
+    public DamageType getDamageType() {
+        return AetherMod.HOLY;
+    }
 }

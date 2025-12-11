@@ -5,7 +5,8 @@
   "name": "Paxels",
   "description": "Bringing paxels to BTA with a standalone mod.",
   "authors": [
-    "LukeisStuff"
+    "LukeisStuff",
+    "hobblerox"
   ],
   "icon": "icon.png",
   "contact": {
@@ -21,7 +22,8 @@
     "beforeGameStart": [
       "luke.paxels.PaxelMod",
       "luke.paxels.compat.aether.PaxelAetherCompatibility",
-      "luke.paxels.compat.deep.PaxelDeepCompatibility"
+      "luke.paxels.compat.deep.PaxelDeepCompatibility",
+      "luke.paxels.compat.moonsteel.PaxelMoonCompatibility"
     ],
     "afterGameStart": [
       "luke.paxels.PaxelMod"
@@ -29,16 +31,19 @@
     "recipesReady": [
       "luke.paxels.PaxelRecipes",
       "luke.paxels.compat.aether.PaxelAetherCompatibility",
-      "luke.paxels.compat.deep.PaxelDeepCompatibility"
+      "luke.paxels.compat.deep.PaxelDeepCompatibility",
+      "luke.paxels.compat.moonsteel.PaxelMoonCompatibility"
     ],
     "initModels": [
       "luke.paxels.PaxelModels",
       "luke.paxels.compat.aether.PaxelAetherCompatibility",
-      "luke.paxels.compat.deep.PaxelDeepCompatibility"
+      "luke.paxels.compat.deep.PaxelDeepCompatibility",
+      "luke.paxels.compat.moonsteel.PaxelMoonCompatibility"
     ],
     "preLaunch": [
       "luke.paxels.compat.aether.PaxelAetherCompatibility",
-      "luke.paxels.compat.deep.PaxelDeepCompatibility"
+      "luke.paxels.compat.deep.PaxelDeepCompatibility",
+      "luke.paxels.compat.moonsteel.PaxelMoonCompatibility"
     ],
     "commandly": [
       "luke.paxels.compat.commandly.PaxelCommandlyPlugin"

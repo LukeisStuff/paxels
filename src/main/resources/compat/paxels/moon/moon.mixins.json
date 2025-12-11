@@ -3,14 +3,13 @@
   "mixinextras": {
     "minVersion": "0.5.0"
   },
-  "package": "luke.paxels.compat.aether.mixin",
+  "package": "luke.paxels.compat.moonsteel.mixin",
   "compatibilityLevel": "JAVA_${java}",
   "client": [
   ],
   "server": [
   ],
   "mixins": [
-    "AetherPickaxeAccessor"
   ],
   "injectors": {
     "defaultRequire": 1

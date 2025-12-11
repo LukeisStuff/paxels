@@ -13,20 +13,20 @@ import static teamport.aether.item.AetherItems.AMBROSIUM;
 
 public class ItemToolPaxelHolystone extends ItemToolPaxelAether {
 
-	public ItemToolPaxelHolystone(String name, String namespaceId, int id, ToolMaterial toolMaterial) {
-		super(name, namespaceId, id, 3, toolMaterial, null);
-	}
+    public ItemToolPaxelHolystone(String name, String namespaceId, int id, ToolMaterial toolMaterial) {
+        super(name, namespaceId, id, 3, toolMaterial, null);
+    }
 
-	@Override
-	public boolean onBlockDestroyed(World world, ItemStack itemstack, int i, int x, int y, int z, Side side, Mob mob) {
-		Block<?> block = Blocks.blocksList[i];
-		if (block != null && (block.getHardness() > 0.0F || this.isSilkTouch())) {
-			itemstack.damageItem(1, mob);
-		}
-		if (!EnvironmentHelper.isClientWorld() && itemRand.nextInt(16) == 0 && block.getHardness() > 0.0F) {
-			world.dropItem(x, y, z, new ItemStack(AMBROSIUM, 1));
-		}
-		return true;
-	}
+    @Override
+    public boolean onBlockDestroyed(World world, ItemStack itemstack, int i, int x, int y, int z, Side side, Mob mob) {
+        Block<?> block = Blocks.blocksList[i];
+        if (block != null && (block.getHardness() > 0.0F || this.isSilkTouch())) {
+            itemstack.damageItem(1, mob);
+        }
+        if (!EnvironmentHelper.isClientWorld() && itemRand.nextInt(16) == 0 && block.getHardness() > 0.0F) {
+            world.dropItem(x, y, z, new ItemStack(AMBROSIUM, 1));
+        }
+        return true;
+    }
 
 }

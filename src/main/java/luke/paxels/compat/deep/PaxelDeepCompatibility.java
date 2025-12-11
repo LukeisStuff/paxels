@@ -18,7 +18,6 @@ public class PaxelDeepCompatibility implements PreLaunchEntrypoint, GameStartEnt
     public static ModelEntrypoint modelEntryPointDelegate;
     public static RecipeEntrypoint recipeEntrypointDelegate;
 
-
     @Override
     public void onPreLaunch() {
         FabricLoader loader = FabricLoader.getInstance();
