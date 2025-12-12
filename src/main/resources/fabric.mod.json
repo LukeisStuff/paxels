@@ -26,7 +26,10 @@
       "luke.paxels.compat.moonsteel.PaxelMoonCompatibility"
     ],
     "afterGameStart": [
-      "luke.paxels.PaxelMod"
+      "luke.paxels.PaxelMod",
+      "luke.paxels.compat.aether.PaxelAetherCompatibility",
+      "luke.paxels.compat.deep.PaxelDeepCompatibility",
+      "luke.paxels.compat.moonsteel.PaxelMoonCompatibility"
     ],
     "recipesReady": [
       "luke.paxels.PaxelRecipes",

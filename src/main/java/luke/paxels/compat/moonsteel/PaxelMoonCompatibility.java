@@ -62,86 +62,85 @@ public class PaxelMoonCompatibility implements PreLaunchEntrypoint, GameStartEnt
     public void beforeGameStart() {
         if (IS_MOON_LOADED) {
             callInit("luke.paxels.compat.moonsteel.PaxelMoonItems", "init");
-        }
+            if (IS_DEEP_LOADED) {
+                Tag<Block<?>> forceFortune = MoonSteelBlocks.FORCE_FORTUNE;
 
-        if (IS_DEEP_LOADED) {
-            Tag<Block<?>> forceFortune = MoonSteelBlocks.FORCE_FORTUNE;
+                DEEPBlocks.stoneAmethystOre.withTags(forceFortune);
+                DEEPBlocks.basaltAmethystOre.withTags(forceFortune);
+                DEEPBlocks.limestoneAmethystOre.withTags(forceFortune);
+                DEEPBlocks.graniteAmethystOre.withTags(forceFortune);
+                DEEPBlocks.permafrostAmethystOre.withTags(forceFortune);
+                DEEPBlocks.peridotiteAmethystOre.withTags(forceFortune);
+                DEEPBlocks.abyssalriteAmethystOre.withTags(forceFortune);
+                DEEPBlocks.pearlstoneAmethystOre.withTags(forceFortune);
 
-            DEEPBlocks.stoneAmethystOre.withTags(forceFortune);
-            DEEPBlocks.basaltAmethystOre.withTags(forceFortune);
-            DEEPBlocks.limestoneAmethystOre.withTags(forceFortune);
-            DEEPBlocks.graniteAmethystOre.withTags(forceFortune);
-            DEEPBlocks.permafrostAmethystOre.withTags(forceFortune);
-            DEEPBlocks.peridotiteAmethystOre.withTags(forceFortune);
-            DEEPBlocks.abyssalriteAmethystOre.withTags(forceFortune);
-            DEEPBlocks.pearlstoneAmethystOre.withTags(forceFortune);
+                DEEPBlocks.stoneBismuthOre.withTags(forceFortune);
+                DEEPBlocks.basaltBismuthOre.withTags(forceFortune);
+                DEEPBlocks.limestoneBismuthOre.withTags(forceFortune);
+                DEEPBlocks.graniteBismuthOre.withTags(forceFortune);
+                DEEPBlocks.permafrostBismuthOre.withTags(forceFortune);
+                DEEPBlocks.peridotiteBismuthOre.withTags(forceFortune);
+                DEEPBlocks.abyssalriteBismuthOre.withTags(forceFortune);
+                DEEPBlocks.pearlstoneBismuthOre.withTags(forceFortune);
 
-            DEEPBlocks.stoneBismuthOre.withTags(forceFortune);
-            DEEPBlocks.basaltBismuthOre.withTags(forceFortune);
-            DEEPBlocks.limestoneBismuthOre.withTags(forceFortune);
-            DEEPBlocks.graniteBismuthOre.withTags(forceFortune);
-            DEEPBlocks.permafrostBismuthOre.withTags(forceFortune);
-            DEEPBlocks.peridotiteBismuthOre.withTags(forceFortune);
-            DEEPBlocks.abyssalriteBismuthOre.withTags(forceFortune);
-            DEEPBlocks.pearlstoneBismuthOre.withTags(forceFortune);
+                DEEPBlocks.stoneLeadOre.withTags(forceFortune);
+                DEEPBlocks.basaltLeadOre.withTags(forceFortune);
+                DEEPBlocks.limestoneLeadOre.withTags(forceFortune);
+                DEEPBlocks.graniteLeadOre.withTags(forceFortune);
+                DEEPBlocks.permafrostLeadOre.withTags(forceFortune);
+                DEEPBlocks.peridotiteLeadOre.withTags(forceFortune);
+                DEEPBlocks.abyssalriteLeadOre.withTags(forceFortune);
+                DEEPBlocks.pearlstoneLeadOre.withTags(forceFortune);
 
-            DEEPBlocks.stoneLeadOre.withTags(forceFortune);
-            DEEPBlocks.basaltLeadOre.withTags(forceFortune);
-            DEEPBlocks.limestoneLeadOre.withTags(forceFortune);
-            DEEPBlocks.graniteLeadOre.withTags(forceFortune);
-            DEEPBlocks.permafrostLeadOre.withTags(forceFortune);
-            DEEPBlocks.peridotiteLeadOre.withTags(forceFortune);
-            DEEPBlocks.abyssalriteLeadOre.withTags(forceFortune);
-            DEEPBlocks.pearlstoneLeadOre.withTags(forceFortune);
+                DEEPBlocks.stoneSilverOre.withTags(forceFortune);
+                DEEPBlocks.basaltSilverOre.withTags(forceFortune);
+                DEEPBlocks.limestoneSilverOre.withTags(forceFortune);
+                DEEPBlocks.graniteSilverOre.withTags(forceFortune);
+                DEEPBlocks.permafrostSilverOre.withTags(forceFortune);
+                DEEPBlocks.netherrackSilverOre.withTags(forceFortune);
+                DEEPBlocks.peridotiteSilverOre.withTags(forceFortune);
+                DEEPBlocks.abyssalriteSilverOre.withTags(forceFortune);
+                DEEPBlocks.pearlstoneSilverOre.withTags(forceFortune);
 
-            DEEPBlocks.stoneSilverOre.withTags(forceFortune);
-            DEEPBlocks.basaltSilverOre.withTags(forceFortune);
-            DEEPBlocks.limestoneSilverOre.withTags(forceFortune);
-            DEEPBlocks.graniteSilverOre.withTags(forceFortune);
-            DEEPBlocks.permafrostSilverOre.withTags(forceFortune);
-            DEEPBlocks.netherrackSilverOre.withTags(forceFortune);
-            DEEPBlocks.peridotiteSilverOre.withTags(forceFortune);
-            DEEPBlocks.abyssalriteSilverOre.withTags(forceFortune);
-            DEEPBlocks.pearlstoneSilverOre.withTags(forceFortune);
+                DEEPBlocks.stoneUraniumOre.withTags(forceFortune);
+                DEEPBlocks.basaltUraniumOre.withTags(forceFortune);
+                DEEPBlocks.limestoneUraniumOre.withTags(forceFortune);
+                DEEPBlocks.graniteUraniumOre.withTags(forceFortune);
+                DEEPBlocks.permafrostUraniumOre.withTags(forceFortune);
+                DEEPBlocks.peridotiteUraniumOre.withTags(forceFortune);
+                DEEPBlocks.abyssalriteUraniumOre.withTags(forceFortune);
+                DEEPBlocks.pearlstoneUraniumOre.withTags(forceFortune);
 
-            DEEPBlocks.stoneUraniumOre.withTags(forceFortune);
-            DEEPBlocks.basaltUraniumOre.withTags(forceFortune);
-            DEEPBlocks.limestoneUraniumOre.withTags(forceFortune);
-            DEEPBlocks.graniteUraniumOre.withTags(forceFortune);
-            DEEPBlocks.permafrostUraniumOre.withTags(forceFortune);
-            DEEPBlocks.peridotiteUraniumOre.withTags(forceFortune);
-            DEEPBlocks.abyssalriteUraniumOre.withTags(forceFortune);
-            DEEPBlocks.pearlstoneUraniumOre.withTags(forceFortune);
+                DEEPBlocks.netherrackTopazOre.withTags(forceFortune);
+                DEEPBlocks.netherrackRhodoniteOre.withTags(forceFortune);
 
-            DEEPBlocks.netherrackTopazOre.withTags(forceFortune);
-            DEEPBlocks.netherrackRhodoniteOre.withTags(forceFortune);
+                DEEPBlocks.peridotiteCoalOre.withTags(forceFortune);
+                DEEPBlocks.abyssalriteCoalOre.withTags(forceFortune);
+                DEEPBlocks.pearlstoneCoalOre.withTags(forceFortune);
 
-            DEEPBlocks.peridotiteCoalOre.withTags(forceFortune);
-            DEEPBlocks.abyssalriteCoalOre.withTags(forceFortune);
-            DEEPBlocks.pearlstoneCoalOre.withTags(forceFortune);
+                DEEPBlocks.peridotiteIronOre.withTags(forceFortune);
+                DEEPBlocks.abyssalriteIronOre.withTags(forceFortune);
+                DEEPBlocks.pearlstoneIronOre.withTags(forceFortune);
 
-            DEEPBlocks.peridotiteIronOre.withTags(forceFortune);
-            DEEPBlocks.abyssalriteIronOre.withTags(forceFortune);
-            DEEPBlocks.pearlstoneIronOre.withTags(forceFortune);
+                DEEPBlocks.peridotiteGoldOre.withTags(forceFortune);
+                DEEPBlocks.abyssalriteGoldOre.withTags(forceFortune);
+                DEEPBlocks.pearlstoneGoldOre.withTags(forceFortune);
 
-            DEEPBlocks.peridotiteGoldOre.withTags(forceFortune);
-            DEEPBlocks.abyssalriteGoldOre.withTags(forceFortune);
-            DEEPBlocks.pearlstoneGoldOre.withTags(forceFortune);
+                DEEPBlocks.peridotiteDiamondOre.withTags(forceFortune);
+                DEEPBlocks.abyssalriteDiamondOre.withTags(forceFortune);
+                DEEPBlocks.pearlstoneDiamondOre.withTags(forceFortune);
 
-            DEEPBlocks.peridotiteDiamondOre.withTags(forceFortune);
-            DEEPBlocks.abyssalriteDiamondOre.withTags(forceFortune);
-            DEEPBlocks.pearlstoneDiamondOre.withTags(forceFortune);
+                DEEPBlocks.peridotiteLapisOre.withTags(forceFortune);
+                DEEPBlocks.abyssalriteLapisOre.withTags(forceFortune);
+                DEEPBlocks.pearlstoneLapisOre.withTags(forceFortune);
 
-            DEEPBlocks.peridotiteLapisOre.withTags(forceFortune);
-            DEEPBlocks.abyssalriteLapisOre.withTags(forceFortune);
-            DEEPBlocks.pearlstoneLapisOre.withTags(forceFortune);
-
-            DEEPBlocks.peridotiteRedstoneOre.withTags(forceFortune);
-            DEEPBlocks.peridotiteRedstoneGlowingOre.withTags(forceFortune);
-            DEEPBlocks.abyssalriteRedstoneOre.withTags(forceFortune);
-            DEEPBlocks.abyssalriteRedstoneGlowingOre.withTags(forceFortune);
-            DEEPBlocks.pearlstoneRedstoneOre.withTags(forceFortune);
-            DEEPBlocks.pearlstoneRedstoneGlowingOre.withTags(forceFortune);
+                DEEPBlocks.peridotiteRedstoneOre.withTags(forceFortune);
+                DEEPBlocks.peridotiteRedstoneGlowingOre.withTags(forceFortune);
+                DEEPBlocks.abyssalriteRedstoneOre.withTags(forceFortune);
+                DEEPBlocks.abyssalriteRedstoneGlowingOre.withTags(forceFortune);
+                DEEPBlocks.pearlstoneRedstoneOre.withTags(forceFortune);
+                DEEPBlocks.pearlstoneRedstoneGlowingOre.withTags(forceFortune);
+            }
         }
     }
 
