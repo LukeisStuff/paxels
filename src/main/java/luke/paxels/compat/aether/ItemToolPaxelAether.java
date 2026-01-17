@@ -1,6 +1,5 @@
 package luke.paxels.compat.aether;
 
-import luke.paxels.compat.aether.mixin.AetherPickaxeAccessor;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockLogicLog;
 import net.minecraft.core.block.Blocks;
@@ -22,7 +21,7 @@ import redart15.commandly.veincapitator.VeinMining;
 import teamport.aether.block.AetherBlockTags;
 import teamport.aether.block.AetherBlocks;
 import teamport.aether.compat.commandly.AetherCommandlyRules;
-import teamport.aether.entity.player.PlayerUntil;
+import teamport.aether.entity.player.PlayerUtil;
 import teamport.aether.item.item_tool.ItemToolPickaxeAether;
 
 import java.util.Random;
@@ -42,7 +41,7 @@ public class ItemToolPaxelAether extends ItemToolPickaxeAether {
 
     @Override
     public boolean canHarvestBlock(Mob mob, ItemStack itemStack, Block<?> block) {
-        Integer miningLevel = AetherPickaxeAccessor.getMiningLevels().get(block);
+        Integer miningLevel = ItemToolPickaxeAether.aetherMiningLevels.get(block);
 
         if (miningLevel != null) {
             return this.material.getMiningLevel() >= miningLevel;
@@ -65,7 +64,7 @@ public class ItemToolPaxelAether extends ItemToolPickaxeAether {
         if (!world.isClientSide && AetherCommandlyRules.canVeinMine(world) && !player.isSneaking()) {
             return !VeinMining
                 .veinMining(world, itemStack, x, y, z, player)
-                .setDropCause(PlayerUntil.isSilkTouch(player) ? EnumDropCause.SILK_TOUCH : EnumDropCause.PROPER_TOOL)
+                .setDropCause(PlayerUtil.isSilkTouchPendant(player) ? EnumDropCause.SILK_TOUCH : EnumDropCause.PROPER_TOOL)
                 .setMiningTags(AetherBlockTags.MINEABLE_BY_AETHER_PICKAXE)
                 .mine(blockId, side);
         }

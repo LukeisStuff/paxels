@@ -125,11 +125,11 @@ public class PaxelCommandlyPlugin implements CommandlyPlugin {
         PickAxeRegister.register(PaxelItems.TOOL_PAXEL_STEEL, ToolMaterial.steel);
 
         if (IS_AETHER_LOADED) {
-            PickAxeRegister.register(PaxelAetherItems.TOOL_PAXEL_SKYROOT, AetherToolMaterial.SKYROOT);
-            PickAxeRegister.register(PaxelAetherItems.TOOL_PAXEL_HOLYSTONE, AetherToolMaterial.HOLYSTONE);
-            PickAxeRegister.register(PaxelAetherItems.TOOL_PAXEL_ZANITE, AetherToolMaterial.ZANITE);
-            PickAxeRegister.register(PaxelAetherItems.TOOL_PAXEL_GRAVITITE, AetherToolMaterial.GRAVITITE);
-            PickAxeRegister.register(PaxelAetherItems.TOOL_PAXEL_VALKYRIE, AetherToolMaterial.VALKYRIE);
+            PickAxeRegister.register(PaxelAetherItems.TOOL_PAXEL_SKYROOT, AetherToolMaterial.skyroot);
+            PickAxeRegister.register(PaxelAetherItems.TOOL_PAXEL_HOLYSTONE, AetherToolMaterial.holystone);
+            PickAxeRegister.register(PaxelAetherItems.TOOL_PAXEL_ZANITE, AetherToolMaterial.zanite);
+            PickAxeRegister.register(PaxelAetherItems.TOOL_PAXEL_GRAVITITE, AetherToolMaterial.gravitite);
+            PickAxeRegister.register(PaxelAetherItems.TOOL_PAXEL_VALKYRIE, AetherToolMaterial.valkyrie);
         }
         if (IS_DEEP_LOADED) {
             PickAxeRegister.register(PaxelDeepItems.TOOL_PAXEL_LEAD, PaxelDeepItems.lead);

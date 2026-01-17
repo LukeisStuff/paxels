@@ -22,7 +22,7 @@ import net.minecraft.core.world.World;
 import org.jetbrains.annotations.Nullable;
 import redart15.commandly.veincapitator.VeinMining;
 import teamport.aether.block.AetherBlocks;
-import teamport.aether.entity.player.PlayerUntil;
+import teamport.aether.entity.player.PlayerUtil;
 
 import java.util.Random;
 
@@ -62,7 +62,7 @@ public class ItemToolPaxel extends ItemToolPickaxe {
         if (!world.isClientSide && PaxelCommandlyRules.canVeinMine(world) && !player.isSneaking()) {
             return !VeinMining
                 .veinMining(world, itemStack, x, y, z, player)
-                .setDropCause(PlayerUntil.isSilkTouch(player) ? EnumDropCause.SILK_TOUCH : EnumDropCause.PROPER_TOOL)
+                .setDropCause(PlayerUtil.isSilkTouchPendant(player) ? EnumDropCause.SILK_TOUCH : EnumDropCause.PROPER_TOOL)
                 .setMiningTags(BlockTags.MINEABLE_BY_PICKAXE)
                 .mine(blockId, side);
         }
