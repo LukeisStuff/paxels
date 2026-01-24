@@ -1,64 +1,30 @@
 package luke.paxels.compat.deep;
 
-import net.fabricmc.loader.api.FabricLoader;
-import net.fabricmc.loader.api.entrypoint.PreLaunchEntrypoint;
 import net.minecraft.client.render.EntityRenderDispatcher;
 import net.minecraft.client.render.TileEntityRenderDispatcher;
 import net.minecraft.client.render.block.color.BlockColorDispatcher;
 import net.minecraft.client.render.block.model.BlockModelDispatcher;
 import net.minecraft.client.render.item.model.ItemModelDispatcher;
-import turniplabs.halplibe.util.GameStartEntrypoint;
 import turniplabs.halplibe.util.ModelEntrypoint;
-import turniplabs.halplibe.util.RecipeEntrypoint;
 
-public class PaxelDeepCompatibility implements PreLaunchEntrypoint, GameStartEntrypoint, ModelEntrypoint, RecipeEntrypoint {
+import static luke.paxels.compat.deep.PaxelDeepMod.IS_DEEP_LOADED;
 
-    public static boolean IS_DEEP_LOADED = false;
-
+public class PaxelDeepClient implements ModelEntrypoint {
     public static ModelEntrypoint modelEntryPointDelegate;
-    public static RecipeEntrypoint recipeEntrypointDelegate;
 
-    @Override
-    public void onPreLaunch() {
-        FabricLoader loader = FabricLoader.getInstance();
-
-        IS_DEEP_LOADED = loader.isModLoaded("deep");
-
+    static {
         if (IS_DEEP_LOADED) {
-
             try {
+
                 modelEntryPointDelegate = (ModelEntrypoint) Class
                     .forName("luke.paxels.compat.deep.PaxelDeepModels")
                     .getConstructor()
                     .newInstance();
 
-                recipeEntrypointDelegate = (RecipeEntrypoint) Class
-                    .forName("luke.paxels.compat.deep.PaxelDeepRecipes")
-                    .getConstructor()
-                    .newInstance();
             } catch (Exception e) {
-                throw new RuntimeException(e);
+                throw new RuntimeException("Failed to init Deep model delegate", e);
             }
         }
-    }
-
-    private static void callInit(String classPath, String methodName) {
-        try {
-            Class.forName(classPath).getMethod(methodName).invoke(null);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    @Override
-    public void beforeGameStart() {
-        if (IS_DEEP_LOADED) {
-            callInit("luke.paxels.compat.deep.PaxelDeepItems", "init");
-        }
-    }
-
-    @Override
-    public void afterGameStart() {
     }
 
     @Override
@@ -86,13 +52,4 @@ public class PaxelDeepCompatibility implements PreLaunchEntrypoint, GameStartEnt
         if (IS_DEEP_LOADED) modelEntryPointDelegate.initTileEntityModels(dispatcher);
     }
 
-    @Override
-    public void onRecipesReady() {
-        if (IS_DEEP_LOADED) recipeEntrypointDelegate.onRecipesReady();
-    }
-
-    @Override
-    public void initNamespaces() {
-        if (IS_DEEP_LOADED) recipeEntrypointDelegate.initNamespaces();
-    }
 }

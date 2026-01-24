@@ -26,7 +26,7 @@ import teamport.aether.entity.player.PlayerUtil;
 
 import java.util.Random;
 
-import static luke.paxels.compat.aether.PaxelAetherCompatibility.IS_AETHER_LOADED;
+import static luke.paxels.compat.aether.PaxelAetherMod.IS_AETHER_LOADED;
 
 public class ItemToolPaxel extends ItemToolPickaxe {
 

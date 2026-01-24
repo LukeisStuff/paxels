@@ -2,27 +2,19 @@ package luke.paxels.compat.moonsteel;
 
 import net.fabricmc.loader.api.FabricLoader;
 import net.fabricmc.loader.api.entrypoint.PreLaunchEntrypoint;
-import net.minecraft.client.render.EntityRenderDispatcher;
-import net.minecraft.client.render.TileEntityRenderDispatcher;
-import net.minecraft.client.render.block.color.BlockColorDispatcher;
-import net.minecraft.client.render.block.model.BlockModelDispatcher;
-import net.minecraft.client.render.item.model.ItemModelDispatcher;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.data.tag.Tag;
 import org.spongepowered.asm.mixin.Mixins;
 import silveon22.deep.block.DEEPBlocks;
 import turniplabs.halplibe.util.GameStartEntrypoint;
-import turniplabs.halplibe.util.ModelEntrypoint;
 import turniplabs.halplibe.util.RecipeEntrypoint;
 import useless.moonsteel.MoonSteelBlocks;
 
-import static luke.paxels.compat.deep.PaxelDeepCompatibility.IS_DEEP_LOADED;
+import static luke.paxels.compat.deep.PaxelDeepMod.IS_DEEP_LOADED;
 
-public class PaxelMoonCompatibility implements PreLaunchEntrypoint, GameStartEntrypoint, ModelEntrypoint, RecipeEntrypoint {
-
+public class PaxelMoonMod implements PreLaunchEntrypoint, GameStartEntrypoint, RecipeEntrypoint {
     public static boolean IS_MOON_LOADED = false;
 
-    public static ModelEntrypoint modelEntryPointDelegate;
     public static RecipeEntrypoint recipeEntrypointDelegate;
 
     @Override
@@ -35,33 +27,22 @@ public class PaxelMoonCompatibility implements PreLaunchEntrypoint, GameStartEnt
             Mixins.addConfiguration("compat/paxels/moon/moon.mixins.json");
 
             try {
-                modelEntryPointDelegate = (ModelEntrypoint) Class
-                    .forName("luke.paxels.compat.moonsteel.PaxelMoonModels")
-                    .getConstructor()
-                    .newInstance();
 
                 recipeEntrypointDelegate = (RecipeEntrypoint) Class
                     .forName("luke.paxels.compat.moonsteel.PaxelMoonRecipes")
                     .getConstructor()
                     .newInstance();
+
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
         }
     }
 
-    private static void callInit(String classPath, String methodName) {
-        try {
-            Class.forName(classPath).getMethod(methodName).invoke(null);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-    }
-
     @Override
     public void beforeGameStart() {
         if (IS_MOON_LOADED) {
-            callInit("luke.paxels.compat.moonsteel.PaxelMoonItems", "init");
+            PaxelMoonItems.init();
             if (IS_DEEP_LOADED) {
                 Tag<Block<?>> forceFortune = MoonSteelBlocks.FORCE_FORTUNE;
 
@@ -146,31 +127,6 @@ public class PaxelMoonCompatibility implements PreLaunchEntrypoint, GameStartEnt
 
     @Override
     public void afterGameStart() {
-    }
-
-    @Override
-    public void initBlockColors(BlockColorDispatcher dispatcher) {
-        if (IS_MOON_LOADED) modelEntryPointDelegate.initBlockColors(dispatcher);
-    }
-
-    @Override
-    public void initBlockModels(BlockModelDispatcher dispatcher) {
-        if (IS_MOON_LOADED) modelEntryPointDelegate.initBlockModels(dispatcher);
-    }
-
-    @Override
-    public void initItemModels(ItemModelDispatcher dispatcher) {
-        if (IS_MOON_LOADED) modelEntryPointDelegate.initItemModels(dispatcher);
-    }
-
-    @Override
-    public void initEntityModels(EntityRenderDispatcher dispatcher) {
-        if (IS_MOON_LOADED) modelEntryPointDelegate.initEntityModels(dispatcher);
-    }
-
-    @Override
-    public void initTileEntityModels(TileEntityRenderDispatcher dispatcher) {
-        if (IS_MOON_LOADED) modelEntryPointDelegate.initTileEntityModels(dispatcher);
     }
 
     @Override

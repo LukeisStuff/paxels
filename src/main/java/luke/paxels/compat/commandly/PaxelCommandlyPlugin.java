@@ -12,9 +12,9 @@ import silveon22.deep.block.DEEPBlocks;
 import teamport.aether.item.item_tool.AetherToolMaterial;
 import useless.moonsteel.MoonSteelItems;
 
-import static luke.paxels.compat.aether.PaxelAetherCompatibility.IS_AETHER_LOADED;
-import static luke.paxels.compat.deep.PaxelDeepCompatibility.IS_DEEP_LOADED;
-import static luke.paxels.compat.moonsteel.PaxelMoonCompatibility.IS_MOON_LOADED;
+import static luke.paxels.compat.aether.PaxelAetherMod.IS_AETHER_LOADED;
+import static luke.paxels.compat.deep.PaxelDeepMod.IS_DEEP_LOADED;
+import static luke.paxels.compat.moonsteel.PaxelMoonMod.IS_MOON_LOADED;
 
 public class PaxelCommandlyPlugin implements CommandlyPlugin {
 
