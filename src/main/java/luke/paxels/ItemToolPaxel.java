@@ -21,12 +21,9 @@ import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
 import org.jetbrains.annotations.Nullable;
 import redart15.commandly.veincapitator.VeinMining;
-import teamport.aether.block.AetherBlocks;
 import teamport.aether.entity.player.PlayerUtil;
 
 import java.util.Random;
-
-import static luke.paxels.compat.aether.PaxelAetherMod.IS_AETHER_LOADED;
 
 public class ItemToolPaxel extends ItemToolPickaxe {
 
@@ -85,18 +82,6 @@ public class ItemToolPaxel extends ItemToolPickaxe {
                 itemstack.damageItem(1, entityplayer);
             }
             return true;
-        }
-        if (IS_AETHER_LOADED) {
-            if (side != Side.BOTTOM && blockAbove == 0 && (blockId == AetherBlocks.GRASS_AETHER.id() || blockId == AetherBlocks.DIRT_AETHER.id())) {
-                world.playBlockSoundEffect(entityplayer, blockX + 0.5F, blockY + 0.5F, blockZ + 0.5F, Blocks.blocksList[blockId], EnumBlockSoundEffectType.PLACE);
-                if (!world.isClientSide) {
-                    world.setBlockWithNotify(blockX, blockY, blockZ, AetherBlocks.PATH_DIRT_AETHER.id());
-                    itemstack.damageItem(1, entityplayer);
-                }
-                return true;
-            } else {
-                return false;
-            }
         }
         return false;
     }

@@ -63,12 +63,12 @@ lwjgl {
 dependencies {
     minecraft("::${libs.versions.bta.get()}")
 
-    implementation(libs.btwaila)
-    implementation(libs.commandly)
+    compileOnly(libs.btwaila)
+    compileOnly(libs.commandly)
 
-    implementation(libs.deep)
+    compileOnly(libs.deep)
 
-    implementation(libs.moon)
+    compileOnly(libs.moon)
 
     compileOnly(libs.aether)
     compileOnly(libs.dragonfly)
