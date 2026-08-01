@@ -5,14 +5,13 @@ import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.item.Items;
 import turniplabs.halplibe.helper.RecipeBuilder;
 import turniplabs.halplibe.helper.recipeBuilders.RecipeBuilderShaped;
-import turniplabs.halplibe.util.RecipeEntrypoint;
 
 import static luke.paxels.PaxelMod.MOD_ID;
 
-public class PaxelRecipes implements RecipeEntrypoint {
+public class PaxelRecipes {
+    private PaxelRecipes(){}
 
-    @Override
-    public void onRecipesReady() {
+    public static void onRecipesReady() {
         RecipeBuilderShaped paxelTemplate = new RecipeBuilderShaped(MOD_ID, "A5P", " S ", " S ");
         paxelTemplate
             .addInput('A', Items.TOOL_AXE_WOOD)
@@ -58,8 +57,7 @@ public class PaxelRecipes implements RecipeEntrypoint {
 
     }
 
-    @Override
-    public void initNamespaces() {
+    public static void initNamespaces() {
         RecipeBuilder.initNameSpace(MOD_ID);
 
         Registries.ITEM_GROUPS.register("paxels:tool_paxels", Registries.stackListOf(
