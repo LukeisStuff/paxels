@@ -7,7 +7,9 @@ import turniplabs.halplibe.helper.ItemBuilder;
 
 import static luke.paxels.PaxelMod.MOD_ID;
 
+@SuppressWarnings({"java:S1104", "java:S1444", "java:S3008" })
 public final class PaxelItems {
+    private PaxelItems(){}
     public static Item TOOL_PAXEL_WOOD;
     public static Item TOOL_PAXEL_STONE;
     public static Item TOOL_PAXEL_IRON;
@@ -31,23 +33,23 @@ public final class PaxelItems {
 
     public static void initializeItems() {
         TOOL_PAXEL_WOOD = new ItemBuilder(MOD_ID)
-            .build(new ItemToolPaxel("tool.paxel.wood", itemKey("tool_paxel_wood"), 20000, 3, ToolMaterial.wood, null));
+            .build(new ItemToolPaxel("tool.paxel.wood", itemKey("tool_paxel_wood"), 20000, ToolMaterial.wood));
 
         TOOL_PAXEL_STONE = new ItemBuilder(MOD_ID)
-            .build(new ItemToolPaxel("tool.paxel.stone", itemKey("tool_paxel_stone"), 20001, 3, ToolMaterial.stone, null));
+            .build(new ItemToolPaxel("tool.paxel.stone", itemKey("tool_paxel_stone"), 20001,ToolMaterial.stone));
 
         TOOL_PAXEL_IRON = new ItemBuilder(MOD_ID)
-            .build(new ItemToolPaxel("tool.paxel.iron", itemKey("tool_paxel_iron"), 20002, 3, ToolMaterial.iron, null));
+            .build(new ItemToolPaxel("tool.paxel.iron", itemKey("tool_paxel_iron"), 20002, ToolMaterial.iron));
 
         TOOL_PAXEL_GOLD = new ItemBuilder(MOD_ID)
             .setTags(ItemTags.IS_SILK_TOUCH)
-            .build(new ItemToolPaxel("tool.paxel.gold", itemKey("tool_paxel_gold"), 20003, 3, ToolMaterial.gold, null));
+            .build(new ItemToolPaxel("tool.paxel.gold", itemKey("tool_paxel_gold"), 20003, ToolMaterial.gold));
 
         TOOL_PAXEL_DIAMOND = new ItemBuilder(MOD_ID)
-            .build(new ItemToolPaxel("tool.paxel.diamond", itemKey("tool_paxel_diamond"), 20004, 3, ToolMaterial.diamond, null));
+            .build(new ItemToolPaxel("tool.paxel.diamond", itemKey("tool_paxel_diamond"), 20004, ToolMaterial.diamond));
 
         TOOL_PAXEL_STEEL = new ItemBuilder(MOD_ID)
-            .build(new ItemToolPaxel("tool.paxel.steel", itemKey("tool_paxel_steel"), 20005, 3, ToolMaterial.steel, null));
+            .build(new ItemToolPaxel("tool.paxel.steel", itemKey("tool_paxel_steel"), 20005, ToolMaterial.steel));
     }
 
 }

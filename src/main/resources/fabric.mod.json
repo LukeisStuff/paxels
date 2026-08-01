@@ -16,41 +16,9 @@
   "license": "CC0-1.0",
   "environment": "*",
   "entrypoints": {
-    "main": [
-      "luke.paxels.PaxelMod"
-    ],
-    "beforeGameStart": [
-      "luke.paxels.PaxelMod",
-      "luke.paxels.compat.aether.PaxelAetherMod",
-      "luke.paxels.compat.deep.PaxelDeepMod",
-      "luke.paxels.compat.moonsteel.PaxelMoonMod"
-    ],
-    "afterGameStart": [
-      "luke.paxels.PaxelMod",
-      "luke.paxels.compat.aether.PaxelAetherMod",
-      "luke.paxels.compat.deep.PaxelDeepMod",
-      "luke.paxels.compat.moonsteel.PaxelMoonMod"
-    ],
-    "recipesReady": [
-      "luke.paxels.PaxelRecipes",
-      "luke.paxels.compat.aether.PaxelAetherMod",
-      "luke.paxels.compat.deep.PaxelDeepMod",
-      "luke.paxels.compat.moonsteel.PaxelMoonMod"
-    ],
-    "initModels": [
-      "luke.paxels.PaxelModels",
-      "luke.paxels.compat.aether.PaxelAetherClient",
-      "luke.paxels.compat.deep.PaxelDeepClient",
-      "luke.paxels.compat.moonsteel.PaxelMoonClient"
-    ],
-    "preLaunch": [
-      "luke.paxels.compat.aether.PaxelAetherMod",
-      "luke.paxels.compat.deep.PaxelDeepMod",
-      "luke.paxels.compat.moonsteel.PaxelMoonMod"
-    ],
-    "commandly": [
-      "luke.paxels.compat.commandly.PaxelCommandlyPlugin"
-    ]
+    "main":         ["luke.paxels.PaxelMod"],
+    "client":       ["luke.paxels.PaxelClient"],
+    "commandly":    ["luke.paxels.compat.commandly.PaxelCommandlyPlugin"]
   },
   "mixins": [
     "paxels.mixins.json"
