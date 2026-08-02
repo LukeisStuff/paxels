@@ -3,7 +3,6 @@ package luke.paxels;
 import net.fabricmc.api.ClientModInitializer;
 import net.minecraft.client.render.item.model.ItemModelDispatcher;
 import net.minecraft.client.render.item.model.ItemModelStandard;
-import turniplabs.halplibe.HalpLibe;
 import turniplabs.halplibe.event.defs.ClientEvents;
 
 import static luke.paxels.PaxelMod.*;
@@ -14,7 +13,6 @@ public class PaxelClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         LOGGER.info("Paxels initialized.");
-        HalpLibe.registerMod(MOD_ID);
         ClientEvents.ITEM_MODEL_RELOAD.listen(KEY, PaxelClient::initItemModels);
     }
 
